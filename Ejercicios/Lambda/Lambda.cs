@@ -19,5 +19,43 @@ namespace Ejercicios.Lambda
                 Console.WriteLine(numero);
             }
         }
+
+
+        public void LambdaOrdenaLista() 
+        {
+            string[] nombres = { "Ana", "Juan", "Pedro", "María" };
+
+            var nombresOrdenadosLambda = nombres.OrderBy(n => n.Length);
+
+            Console.WriteLine("Lista Ordenada (Lambda Syntax):");
+
+            foreach (var nombre in nombresOrdenadosLambda)
+            {
+                Console.WriteLine(nombre);
+            }
+
+
+        }
+
+        public void LambdaConsultaNombre()
+        {
+            List<Persona> personas = new List<Persona>
+            {
+                new Persona { Nombre = "Ana", edad=23 },
+                new Persona {Nombre = "Juan", edad=30 },
+                new Persona { Nombre= "Pedro",edad=21 }
+            };
+
+            var nombresPersonasLambda = personas.Select(p => p.Nombre);
+
+            Console.WriteLine("Nombres de personas (Lambda Syntax):");
+            foreach (var nombre in nombresPersonasLambda)
+            {
+                Console.WriteLine(nombre);
+            }
+
+
+        }
+
     }
 }

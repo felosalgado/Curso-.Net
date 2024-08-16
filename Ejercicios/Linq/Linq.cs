@@ -21,6 +21,45 @@ namespace Ejercicios.Linq
                 Console.WriteLine(numero);
             }
         }
-        
+
+
+        public void QuerySintaxOrdenaLista()
+        {
+            string[] nombres = { "Ana", "Juan", "Pedro", "María" };
+
+            var nombresOrdenados = from n in nombres
+                                   orderby n.Length
+                                   select n;
+            Console.WriteLine("Nombres ordenados por longitud");
+
+            foreach (var nombre in nombresOrdenados)
+            {
+                Console.WriteLine($"el nombre es: {nombre}");
+            }
+
+        }
+
+        public void QuerySintaxConsultaNombre()
+        {
+            List<Persona> personas = new List<Persona>
+            {
+                new Persona { Nombre = "Ana", edad=23 },
+                new Persona {Nombre = "Juan", edad=30 },
+                new Persona { Nombre= "Pedro",edad=21 }
+            };
+
+            var nombrePersona = from p in personas
+                                select p.Nombre;
+
+            Console.WriteLine("Nombres de personas (Query Syntax):");
+            foreach (var nombre in nombrePersona)
+            {
+                Console.WriteLine(nombre);
+            }
+
+
+
+        }
+
     }
 }

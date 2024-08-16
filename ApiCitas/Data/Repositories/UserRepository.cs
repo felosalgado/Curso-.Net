@@ -58,5 +58,7 @@ namespace ApiCitas.Data.Repositories
                 return await connection.ExecuteAsync(query, new { Id = id });
             }
         }
+
+       
     }
 }

@@ -22,6 +22,7 @@ namespace Ejercicios.Linq
             }
         }
 
+
         public void QuerySintaxOrdenaLista()
         {
             string[] nombres = { "Ana", "Juan", "Pedro", "María" };

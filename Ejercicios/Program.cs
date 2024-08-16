@@ -1,2 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using Ejercicios.Lambda;
+using Ejercicios.Linq;
+
+Linq linq = new Linq();
+linq.QuerySintaxNumerosPares();
+
+Lambda lambda = new Lambda();
+lambda.LambdaNumerosPares();

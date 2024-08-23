@@ -15,7 +15,10 @@ namespace ApiCitas.Controllers
         {
             _userService = userService;
         }
-
+        /// <summary>
+        /// Obtiene todos los usuarios
+        /// </summary>
+        /// <returns>Lista de usuarios</returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetAllUsers()
         {

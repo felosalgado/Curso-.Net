@@ -32,6 +32,7 @@ namespace ApiCitas.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUserById(int id)
         {
+
             var user = await _userService.GetUserById(id);
             if (user == null)
             {

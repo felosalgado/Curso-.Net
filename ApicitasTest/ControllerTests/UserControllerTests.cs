@@ -1,14 +1,8 @@
-﻿using NSubstitute;
-using Xunit;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ApiCitas.Controllers;
-using ApiCitas.Services;
+﻿using ApiCitas.Controllers;
 using ApiCitas.Models;
+using ApiCitas.Services;
 using Microsoft.AspNetCore.Mvc;
+using NSubstitute;
 
 namespace ApiCitasTest.ControllerTests
 {

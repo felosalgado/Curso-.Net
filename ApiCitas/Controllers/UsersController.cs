@@ -15,11 +15,17 @@ namespace ApiCitas.Controllers
         {
             _userService = userService;
         }
-
+        /// <summary>
+        /// Obtiene todos los usuarios
+        /// </summary>
+        /// <returns>Lista de usuarios</returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetAllUsers()
         {
             var users = await _userService.GetAllUsers();
+            //IQueryable<User> usersAsQueryable = users.AsQueryable();
+            //IQueryable<User> filter = usersAsQueryable.Where(e => e.UserName.Equals("Cristian"));
+
             return Ok(users);
         }
 

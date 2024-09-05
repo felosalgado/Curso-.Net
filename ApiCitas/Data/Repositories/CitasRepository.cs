@@ -16,7 +16,7 @@ namespace ApiCitas.Data.Repositories
         {
             using (var connection = _context.CreateConnection())
             {
-                var query = $@"INSERT INTO Citas (UsuarioID,
+                var query = $@"INSERT INTO Cita (UsuarioID,
                         FechaCita,
                         Descripcion,
                         Lugar,
@@ -41,7 +41,7 @@ namespace ApiCitas.Data.Repositories
         {
             using (var connection = _context.CreateConnection())
             {
-                var query = "DELETE FROM Citas WHERE CitaID = @CitaID";
+                var query = "DELETE FROM Cita WHERE CitaID = @CitaID";
                 return await connection.ExecuteAsync(query, new { CitaID = id });
             }
         }
@@ -50,7 +50,7 @@ namespace ApiCitas.Data.Repositories
         {
             using(var connection = _context.CreateConnection())
             {
-                var query = "SELECT * FROM Citas";
+                var query = "SELECT * FROM Cita";
                 return await connection.QueryAsync<Citas>(query);
             }
         }
@@ -59,7 +59,7 @@ namespace ApiCitas.Data.Repositories
         {
             using( var connection = _context.CreateConnection())
             {
-                var query = "SELECT * FROM Citas WHERE CitaID = @CitaID";
+                var query = "SELECT * FROM Cita WHERE CitaID = @CitaID";
                 return await connection.QuerySingleOrDefaultAsync<Citas>(query, new { CitaID = id});
             }
         }
@@ -68,7 +68,7 @@ namespace ApiCitas.Data.Repositories
         {
             using(var connection = _context.CreateConnection())
             {
-                var query = "UPDATE Citas SET " +
+                var query = "UPDATE Cita SET " +
                     "UsuarioID = @UsuarioID, " +
                     "FechaCita = @FechaCita, " +
                     "Descripcion = @Descripcion, " +

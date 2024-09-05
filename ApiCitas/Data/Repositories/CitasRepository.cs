@@ -16,9 +16,23 @@ namespace ApiCitas.Data.Repositories
         {
             using (var connection = _context.CreateConnection())
             {
-                var query = "INSERT INTO Citas (UsuarioID,FechaCita,Descripcion,Lugar,Estado,FechaCreacion,FechaModificacion) " +
-                    "VALUES (@UsuarioID,@FechaCita,@Descripcion,@Lugar,@Estado,@FechaCreacion,@FechaModificacion);" +
-                    "SELECT CAST(SCOPE_IDENTITY() as int)";
+                var query = $@"INSERT INTO Citas (UsuarioID,
+                        FechaCita,
+                        Descripcion,
+                        Lugar,
+                        Estado,
+                        FechaCreacion,
+                        FechaModificacion
+                        ) 
+                    VALUES (@UsuarioID,
+                        @FechaCita,
+                        @Descripcion,
+                        @Lugar,
+                        @Estado,
+                        @FechaCreacion,
+                        @FechaModificacion
+                        );
+                SELECT CAST(SCOPE_IDENTITY() as int)";
                 return await connection.QuerySingleAsync<int>(query, citas);
             }
         }
@@ -54,7 +68,14 @@ namespace ApiCitas.Data.Repositories
         {
             using(var connection = _context.CreateConnection())
             {
-                var query = "UPDATE Citas SET UsuarioID = @UsuarioID, FechaCita = @FechaCita, Descripcion = @Descripcion, Lugar = @Lugar, Estado = @Estado, FechaModificacion = @FechaModificacion  WHERE CitaID = @CitaID";
+                var query = "UPDATE Citas SET " +
+                    "UsuarioID = @UsuarioID, " +
+                    "FechaCita = @FechaCita, " +
+                    "Descripcion = @Descripcion, " +
+                    "Lugar = @Lugar, " +
+                    "Estado = @Estado, " +
+                    "FechaModificacion = @FechaModificacion  " +
+                    "WHERE CitaID = @CitaID";
                 return await connection.ExecuteAsync(query, citas);
             }
         }

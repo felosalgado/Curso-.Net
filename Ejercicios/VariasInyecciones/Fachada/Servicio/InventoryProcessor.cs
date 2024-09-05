@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace Ejercicios.VariasInyecciones.Fachada.Servicio
 {
-    public class DiscountProcessor : IOrderProcessor
+    public class InventoryProcessor :IOrderProcessor
     {
-        private readonly IDiscountService _discountService;
-        public DiscountProcessor(IDiscountService discountService)
+        private readonly IInventoryService _inventoryService;
+        public InventoryProcessor(IInventoryService inventoryService)
         {
-            _discountService = discountService;
+            _inventoryService = inventoryService;
         }
         public void Process(Order order)
         {
-            _discountService.ApplyDiscount(order);
+            _inventoryService.UpdateInventory(order);
         }
     }
 }

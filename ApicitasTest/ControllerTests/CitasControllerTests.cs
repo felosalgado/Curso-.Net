@@ -49,5 +49,34 @@ namespace ApiCitasTest.ControllerTests
 
 
         }
+
+        [Fact]
+        public async Task CreateCitasReturnBad()
+        {
+            #region Arrange
+            var Citas = new Citas()
+            {
+                CitaID = 2,
+                
+                Descripcion = "Prueba2",
+                Lugar = "Mosquera",
+                
+                FechaCita = DateTime.Now,
+                FechaCreacion = DateTime.Now,
+                FechaModificacion = null
+            };
+
+            await _ICitasService.CreateCitas(Citas);
+            #endregion
+            #region Act
+            var result = await _citasController.CreateCitas(Citas);
+            #endregion
+            #region Assert
+            var okResult = Assert.IsType<CreatedAtActionResult>(result);
+            var returnValue = Assert.IsType<Citas>(okResult.Value);
+            #endregion
+
+
+        }
     }
 }

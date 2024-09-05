@@ -15,6 +15,7 @@ builder.Services.AddScoped<ICitasService, CitasService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ICitasRepository, CitasRepository>();
 
+//Ejemplo simulación
 builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                      .AddEnvironmentVariables();
 

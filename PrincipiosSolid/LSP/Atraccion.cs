@@ -12,9 +12,9 @@
     {
         public override void Operar()
         {
-            Console.WriteLine("La montaña rusa está operando.");
+            //.WriteLine("La montaña rusa está operando.");
              
-            //throw new Exception("Esta atraccion requiere una inspeccion antes de operar");
+            throw new Exception("Esta atraccion requiere una inspeccion antes de operar");
         }
     }
 

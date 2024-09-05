@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejercicios", "Ejercicios\Ej
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiCitasTest", "ApicitasTest\ApiCitasTest.csproj", "{091B68D5-E741-4CB0-B0B8-CC7CB1D18ED6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrincipiosSolid", "..\PrincipiosSolid\PrincipiosSolid\PrincipiosSolid\PrincipiosSolid.csproj", "{C90F766E-5158-4CFA-B0F8-0E3564CE3357}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrincipiosSolid", "PrincipiosSolid\PrincipiosSolid.csproj", "{3207AE10-006F-48AE-9D3D-F723D7C66009}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{091B68D5-E741-4CB0-B0B8-CC7CB1D18ED6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{091B68D5-E741-4CB0-B0B8-CC7CB1D18ED6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{091B68D5-E741-4CB0-B0B8-CC7CB1D18ED6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C90F766E-5158-4CFA-B0F8-0E3564CE3357}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C90F766E-5158-4CFA-B0F8-0E3564CE3357}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C90F766E-5158-4CFA-B0F8-0E3564CE3357}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C90F766E-5158-4CFA-B0F8-0E3564CE3357}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3207AE10-006F-48AE-9D3D-F723D7C66009}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3207AE10-006F-48AE-9D3D-F723D7C66009}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3207AE10-006F-48AE-9D3D-F723D7C66009}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3207AE10-006F-48AE-9D3D-F723D7C66009}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

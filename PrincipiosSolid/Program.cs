@@ -10,12 +10,12 @@
 //using PrincipiosSolid.OCP;
 
 //TicketManagerOCP ticketManagerOCP = new TicketManagerOCP();
-//BoletoAdulto boletoAdulto = new BoletoAdulto();
+////BoletoAdulto boletoAdulto = new BoletoAdulto();
 //BoletoNiño boletoNiño = new BoletoNiño();
-//BoletoSenior boletoSenior = new BoletoSenior();
-//BoletoEstudiante boletoEstudiante = new BoletoEstudiante();
+////BoletoSenior boletoSenior = new BoletoSenior();
+////BoletoEstudiante boletoEstudiante = new BoletoEstudiante();
 
-//double valBoleto = ticketManagerOCP.CalcularPrecio(boletoEstudiante);
+//double valBoleto = ticketManagerOCP.CalcularPrecio(boletoNiño);
 //Console.WriteLine($"El valor del boleto es {valBoleto.ToString()}");
 
 // 3. Liskov 
@@ -30,15 +30,15 @@
 //parque.IniciarAtraccion(carrosChocones);
 
 // 4. Segregacion de interfaces
-using PrincipiosSolid.ISP;
+//using PrincipiosSolid.ISP;
 
-MontañaRusa montañaRusa = new MontañaRusa();
-montañaRusa.InspeccionarSeguridad();
-montañaRusa.Operar();
+//MontañaRusa montañaRusa = new MontañaRusa();
+//montañaRusa.InspeccionarSeguridad();
+//montañaRusa.Operar();
 
 // 5. Inversion de dependencias, podemos cambiar la atraccion sin cambiar parque tematico
-//using PrincipiosSolid.DIP;
+using PrincipiosSolid.DIP;
 
-//MontañaRusaDIP montañaRusaDIP = new MontañaRusaDIP();
-//ParqueTematicoDIP parqueTematicoDIP = new ParqueTematicoDIP(montañaRusaDIP);
-//parqueTematicoDIP.IniciarAtraccion();
+MontañaRusaDIP montañaRusaDIP = new MontañaRusaDIP();
+ParqueTematicoDIP parqueTematicoDIP = new ParqueTematicoDIP(montañaRusaDIP);
+parqueTematicoDIP.IniciarAtraccion();

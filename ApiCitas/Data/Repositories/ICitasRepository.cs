@@ -10,3 +10,4 @@ namespace ApiCitas.Data.Repositories
         Task<int> Delete(int id);
         Task<IEnumerable<Citas>> GetAll();
     }
+}

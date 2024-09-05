@@ -8,7 +8,42 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="obj\Debug\net7.0\.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" />
+    <Compile Include="obj\Debug\net7.0\Ejercicios.AssemblyInfo.cs" />
+    <Compile Include="obj\Debug\net7.0\Ejercicios.GlobalUsings.g.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="bin\Debug\net7.0\Ejercicios.deps.json" />
+    <Content Include="bin\Debug\net7.0\Ejercicios.runtimeconfig.json" />
+    <Content Include="obj\Debug\net7.0\Ejercicios.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\net7.0\Ejercicios.sourcelink.json" />
+    <Content Include="obj\Ejercicios.csproj.nuget.dgspec.json" />
+    <Content Include="obj\project.assets.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="VariasInyecciones\Fachada\Interfaces\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Debug\net7.0\Ejercicios.dll" />
+    <None Include="bin\Debug\net7.0\Ejercicios.exe" />
+    <None Include="bin\Debug\net7.0\Ejercicios.pdb" />
+    <None Include="obj\Debug\net7.0\apphost.exe" />
+    <None Include="obj\Debug\net7.0\Ejercicios.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\net7.0\Ejercicios.assets.cache" />
+    <None Include="obj\Debug\net7.0\Ejercicios.csproj.BuildWithSkipAnalyzers" />
+    <None Include="obj\Debug\net7.0\Ejercicios.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\net7.0\Ejercicios.dll" />
+    <None Include="obj\Debug\net7.0\Ejercicios.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\Debug\net7.0\Ejercicios.genruntimeconfig.cache" />
+    <None Include="obj\Debug\net7.0\Ejercicios.pdb" />
+    <None Include="obj\Debug\net7.0\refint\Ejercicios.dll" />
+    <None Include="obj\Debug\net7.0\ref\Ejercicios.dll" />
+    <None Include="obj\Ejercicios.csproj.nuget.g.props" />
+    <None Include="obj\Ejercicios.csproj.nuget.g.targets" />
+    <None Include="obj\project.nuget.cache" />
   </ItemGroup>
 
 </Project>

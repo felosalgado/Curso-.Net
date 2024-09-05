@@ -16,8 +16,8 @@ namespace ApiCitas.Data.Repositories
         {
             using (var connection = _context.CreateConnection())
             {
-                var query = "INSERT INTO Citas (CitaID,UsuarioID,FechaCita,Descripcion,Lugar,Estado,FechaCreacion,FechaModificacion) " +
-                    "VALUES (@CitaID,@UsuarioID,@FechaCita,@Descripcion,@Lugar,@Estado,@FechaCreacion,@FechaModificacion);" +
+                var query = "INSERT INTO Citas (UsuarioID,FechaCita,Descripcion,Lugar,Estado,FechaCreacion,FechaModificacion) " +
+                    "VALUES (@UsuarioID,@FechaCita,@Descripcion,@Lugar,@Estado,@FechaCreacion,@FechaModificacion);" +
                     "SELECT CAST(SCOPE_IDENTITY() as int)";
                 return await connection.QuerySingleAsync<int>(query, citas);
             }

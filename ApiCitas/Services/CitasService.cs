@@ -28,12 +28,12 @@ namespace ApiCitas.Services
 
         public async Task<Citas> GetCitasById(int id)
         {
-            return await GetCitasById(id);
+            return await _ICitasRepository.GetById(id);
         }
 
         public async Task<int> UpdateCitas(Citas citas)
         {
-            return await UpdateCitas(citas);
+            return await _ICitasRepository.Update(citas);
         }
     }
 }

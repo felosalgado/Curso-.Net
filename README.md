@@ -1,7 +1,7 @@
 
 # ApiCitas
 
-![Vista General](https://github.com/felosalgado/Curso-.Net/blob/IsraelFelipeSilva_05-09-2024_TrabajoFinalBack/api1.png)
+![Vista General](api1.png)
 
 
 

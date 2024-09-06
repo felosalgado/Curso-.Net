@@ -33,40 +33,44 @@ Además, se incluye la documentación para la integración con Swagger, y se han
    ```bash
    git clone https://github.com/felosalgado/Curso-.Net.git
 2. Navega al directorio del proyecto:
-
-
+```bash
 cd Curso-.Net
 3. Restaura los paquetes NuGet:
---dotnet restore
+```bash
+dotnet restore
 
-4. Configura tu cadena de conexión en el archivo appsettings.json para que apunte a tu base de datos.
+4. Configura tu cadena de conexión en el archivo ## appsettings.json para que apunte a tu base de datos.
 
 5. Ejecuta el proyecto:
-
-
+```bash
 --dotnet run
 
 ## Uso de Swagger
 Una vez que el proyecto esté corriendo, puedes acceder a la documentación de Swagger navegando a la siguiente URL en tu navegador:
+```bash
+https://localhost:{puerto}/swagger/index.html
 
-
--- https://localhost:{puerto}/swagger/index.html
 Swagger te permitirá probar los endpoints de la API directamente desde el navegador, además de ver la descripción de cada uno de los métodos disponibles.
 
 ## Endpoints Principales
--- GET /api/citas
+```bash
+GET /api/citas
+
 Obtiene todas las citas registradas en la base de datos.
 
--- GET /api/citas/{id}
+```bash
+ GET /api/citas/{id}
 Obtiene una cita específica a partir de su ID.
+```bash
+ POST /api/citas
 
--- POST /api/citas
 Crea una nueva cita.
-
--- PUT /api/citas/{id}
+```bash
+ PUT /api/citas/{id}
 Actualiza una cita existente.
 
--- DELETE /api/citas/{id}
+```bash
+ DELETE /api/citas/{id}
 Elimina una cita de la base de datos.
 
 ## Pruebas Unitarias
@@ -75,12 +79,13 @@ El proyecto incluye pruebas unitarias usando el framework xUnit y Moq. Estas pru
 -- Ejecutar las pruebas
 Para ejecutar las pruebas, utiliza el siguiente comando:
 
-
+```bash
 dotnet test
+
 Ejemplos de Pruebas
 A continuación se muestra un ejemplo de cómo se prueba el método UpdateCita del controlador CitasController utilizando Moq para simular el servicio de citas:
 
-
+```bash
 [Fact]
 public async Task UpdateCita_ReturnsNoContentResult_WhenSuccessful()
 {

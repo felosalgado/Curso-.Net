@@ -130,6 +130,8 @@ public async Task UpdateCita_ReturnsNoContentResult_WhenSuccessful()
 
 ## Script de creación de la tabla `Citas`
 
+![tabla Citas](api5.png)
+
 A continuación se incluye el script SQL para crear la tabla `Citas` en la base de datos:
 
 ```sql

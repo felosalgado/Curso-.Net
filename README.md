@@ -98,6 +98,7 @@ Elimina una cita de la base de datos.
 ## Pruebas Unitarias
 
 El proyecto incluye pruebas unitarias usando el framework xUnit y Moq. Estas pruebas utilizan objetos simulados para evitar cualquier efecto sobre la base de datos en los entornos de pruebas.
+![Pruebas Unitarias](api1.png)
 
 -- Ejecutar las pruebas:
 

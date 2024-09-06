@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ApiCitas.Data.Repositories
 {
+    // como lo hace 
     public class UserRepository : IUserRepository
     {
         private readonly IDbContext _context;
@@ -36,7 +37,7 @@ namespace ApiCitas.Data.Repositories
         {
             using (var connection = _context.CreateConnection())
             {
-                var query = "INSERT INTO Users (UserName, UserEmail, UserDateBirth) VALUES (@UserName, @UserEmail, @UserDateBirth); SELECT CAST(SCOPE_IDENTITY() as int)";
+                var query = "INSERT INTO Users (UserName, UserLastName, UserPhone,   UserEmail, UserDateBirth) VALUES (@UserName, @UserLastName, @UserPhone,  @UserEmail, @UserDateBirth); SELECT CAST(SCOPE_IDENTITY() as int)";
                 return await connection.QuerySingleAsync<int>(query, user);
             }
         }

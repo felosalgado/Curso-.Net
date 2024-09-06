@@ -10,8 +10,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddScoped<IDbContext, DbContext>();
-builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUserService, UserService>(); 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+builder.Services.AddScoped<ICitaService, CitaService>(); // se agrega para que se implemente en la tabla de citas. 
+builder.Services.AddScoped<ICitaRepository, CitaRepository>();// se agrega para que se implemente en la tabla de citas 
 
 builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                      .AddEnvironmentVariables();

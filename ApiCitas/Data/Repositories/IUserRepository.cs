@@ -2,6 +2,7 @@
 
 namespace ApiCitas.Data.Repositories
 {
+    // que hace o tiene que hacer 
     public interface IUserRepository
     {
         Task<User> GetById(int id);

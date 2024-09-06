@@ -5,6 +5,7 @@ namespace ApiCitas.Services
 {
     public class UserService : IUserService
     {
+        // esto es como un logic  validaciones antes de llegar al repo
         private readonly IUserRepository _userRepository;
 
         public UserService(IUserRepository userRepository)

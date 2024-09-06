@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiCitas", "ApiCitas\ApiCit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejercicios", "Ejercicios\Ejercicios.csproj", "{365E1A37-3FC0-4EA5-9702-2150E7A189A1}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiAplicacionConsola", "MiAplicacionConsola\MiAplicacionConsola.csproj", "{9F571C09-B4D4-42D9-8395-B52D813328B7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiCitasTest", "ApicitasTest\ApiCitasTest.csproj", "{FD344BD5-AC09-4A87-8B13-094566630C95}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{365E1A37-3FC0-4EA5-9702-2150E7A189A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{365E1A37-3FC0-4EA5-9702-2150E7A189A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{365E1A37-3FC0-4EA5-9702-2150E7A189A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F571C09-B4D4-42D9-8395-B52D813328B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F571C09-B4D4-42D9-8395-B52D813328B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F571C09-B4D4-42D9-8395-B52D813328B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F571C09-B4D4-42D9-8395-B52D813328B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD344BD5-AC09-4A87-8B13-094566630C95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD344BD5-AC09-4A87-8B13-094566630C95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD344BD5-AC09-4A87-8B13-094566630C95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD344BD5-AC09-4A87-8B13-094566630C95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

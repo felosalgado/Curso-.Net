@@ -43,8 +43,9 @@ namespace ApiCitas.Controllers
         [HttpPost]
         public async Task<ActionResult> CreateUser(User user)
         {
-            await _userService.CreateUser(user);
-            return CreatedAtAction(nameof(GetUserById), new { id = user.IdUser }, user);
+            var idUser = await _userService.CreateUser(user);
+            user.IdUser = idUser;
+            return CreatedAtAction(nameof(GetUserById), new { id = idUser }, user);
         }
 
         [HttpPut("{id}")]

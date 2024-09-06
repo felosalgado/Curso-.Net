@@ -27,7 +27,7 @@ namespace ApiCitas.Data.Repositories
         {
             using (var connection = _context.CreateConnection())
             {
-                var query = "SELECT * FROM Users WHERE Id = @Id";
+                var query = "SELECT * FROM Users WHERE IdUser = @Id";
                 return await connection.QuerySingleOrDefaultAsync<User>(query, new { Id = id });
             }
         }
@@ -36,7 +36,8 @@ namespace ApiCitas.Data.Repositories
         {
             using (var connection = _context.CreateConnection())
             {
-                var query = "INSERT INTO Users (UserName, UserEmail, UserDateBirth) VALUES (@UserName, @UserEmail, @UserDateBirth); SELECT CAST(SCOPE_IDENTITY() as int)";
+                //INSERT INTO Users (UserName, UserLastName, UserPhone, UserEmail) VALUES (@UserName, @UserLastName, @UserPhone, @UserEmail)
+                var query = "INSERT INTO Users (UserName, UserLastName, UserPhone, UserEmail, UserDateBirth) VALUES (@UserName, @UserLastName, @UserPhone, @UserEmail, @UserDateBirth); SELECT CAST(SCOPE_IDENTITY() as int)";
                 return await connection.QuerySingleAsync<int>(query, user);
             }
         }

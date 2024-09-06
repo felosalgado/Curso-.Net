@@ -45,5 +45,32 @@ namespace ApiCitasTest.ControllerTests
             Assert.Equal("John", returnValue[1].UserName);
         }
 
+        [Fact]
+        public async Task CreateUser_ReturnsCreatedUser_WhenUserIsValid()
+        {
+            // Arrange
+            var newUser = new User 
+            {   
+                IdUser = 1,
+                UserName = "Alfredo", 
+                UserLastName = "Alvarez", 
+                UserPhone = "789789789", 
+                UserEmail = "alal2134@gmail.com", 
+                UserDateBirth = "2000-06-21" 
+            };
+            _userService.CreateUser(newUser).Returns(Task.FromResult(9));
+
+            // Act
+            var result = await _controller.CreateUser(newUser);
+
+            // Assert
+            //var actionResult = Assert.IsType<ActionResult>(result);
+            var actionResult = Assert.IsAssignableFrom<ActionResult>(result);
+            var createdAtActionResult = Assert.IsType<CreatedAtActionResult>(actionResult);
+            var returnedUser = Assert.IsType<User>(createdAtActionResult.Value);
+            Assert.Equal(newUser.IdUser, returnedUser.IdUser);
+            Assert.Equal(newUser.UserName, returnedUser.UserName);
+        }
+
     }
 }

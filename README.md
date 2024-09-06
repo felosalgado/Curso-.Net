@@ -1,6 +1,10 @@
 
 # ApiCitas
 
+![Vista General](assets/api1.png)
+
+
+
 ## Descripción
 
 ApiCitas es una API para gestionar citas, implementada en ASP.NET Core. La aplicación sigue las mejores prácticas para la arquitectura de servicios, utilizando inyección de dependencias y patrones de diseño como el Repository Pattern.
@@ -70,6 +74,8 @@ Swagger te permitirá probar los endpoints de la API directamente desde el naveg
 GET /api/citas
 ```
 Obtiene todas las citas registradas en la base de datos.
+![GET /api/citas](assets/api2.png)
+
 
 ```bash
 GET /api/citas/{id}
@@ -80,6 +86,7 @@ Obtiene una cita específica a partir de su ID.
 POST /api/citas
 ```
 Crea una nueva cita.
+![POST /api/citas](assets/api3.png)
 
 ```bash
 PUT /api/citas/{id}

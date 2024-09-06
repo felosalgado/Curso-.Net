@@ -1,10 +1,6 @@
 
 # ApiCitas
 
-![Vista General](api1.png)
-
-
-
 ## Descripción
 
 ApiCitas es una API para gestionar citas, implementada en ASP.NET Core. La aplicación sigue las mejores prácticas para la arquitectura de servicios, utilizando inyección de dependencias y patrones de diseño como el Repository Pattern.
@@ -59,6 +55,7 @@ Además, se incluye la documentación para la integración con Swagger, y se han
    ```
 
 ## Uso de Swagger
+![Vista General](api1.png)
 
 Una vez que el proyecto esté corriendo, puedes acceder a la documentación de Swagger navegando a la siguiente URL en tu navegador:
 

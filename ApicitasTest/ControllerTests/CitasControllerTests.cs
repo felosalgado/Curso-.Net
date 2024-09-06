@@ -23,29 +23,41 @@ namespace ApiCitasTest.ControllerTests
             _controller = new CitasController(_citaService);
         }
 
+
+
         [Fact]
-        public async Task GetAllCitas_ReturnsOkResult_WithListOfUsers()
+        public async Task CreateCitas_ReturnsOkResult_WithListOfCitas()
         {
-            // Arrange
-            var testCitas = new List<Citas>
-        {
-            new Citas { CitaID = 1, UsuarioID = 2, FechaCita = Convert.ToDateTime("2024-09-06"), Descripcion = "Prueba",Lugar = "prueba",Estado = "estadoprueba",
-                FechaCreacion = Convert.ToDateTime("2024-09-06") ,FechaModificacion = Convert.ToDateTime("2024-09-06") },
-                
+
+            var newCita = new Citas
+            {
+                CitaID = 3,
+                UsuarioID = 1,
+                FechaCita = DateTime.Now,
+                Descripcion = "Cita Medicina G",
+                Lugar = "Consultorio",
+                Estado = "Pendiente",
+                FechaCreacion = DateTime.Now
+
+                //  CitaID = 3,
+                //Descripcion = "Description new",
+                //Estado = "Estado",
+                //FechaCita = DateTime.Now,
+                //FechaCreacion = DateTime.Now,
+                //Lugar = "Sala 3",
+                //UsuarioID = 1
 
 
-    };
-            _citaService.GetAllCitas().Returns(testCitas);
 
-            // Act
-            var result = await _controller.GetAllCitas();
+            };
+            _citaService.CreateCita(Arg.Any<Citas>()).Returns(newCita.CitaID);
 
-            // Assert
-            var okResult = Assert.IsType<OkObjectResult>(result.Result);
-            var returnValue = Assert.IsType<List<Citas>>(okResult.Value);
-            Assert.Equal(2, returnValue.Count);
-            Assert.Equal("Prueba", returnValue[0].Lugar);
-            Assert.Equal("Prueba1", returnValue[1].Lugar);
+            var result = await _controller.CreateCita(newCita);
+
+            var okResult = Assert.IsType<CreatedAtActionResult>(result);
+            var returnValue = Assert.IsType<Citas>(okResult.Value);
+            Assert.True(returnValue.CitaID > 1);
+            Assert.Equal(3, returnValue.CitaID);
         }
 
     }

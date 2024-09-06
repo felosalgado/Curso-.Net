@@ -1,6 +1,8 @@
 using ApiCitas.Data;
 using ApiCitas.Data.Repositories;
+using ApiCitas.Data.Repositories.Interfaces;
 using ApiCitas.Services;
+using ApiCitas.Services.Interfaces;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 
@@ -10,8 +12,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddScoped<IDbContext, DbContext>();
+
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddSingleton<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ICitaRepository, CitaRepository>();
+builder.Services.AddScoped<ICitaService, CitaService>();
+
 
 builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                      .AddEnvironmentVariables();

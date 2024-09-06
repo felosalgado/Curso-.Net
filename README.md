@@ -151,4 +151,5 @@ Este script crea una tabla `Citas` con las siguientes columnas:
 - `ClienteID`: Identificador del cliente asociado con la cita.
 - `Estado`: El estado actual de la cita (por ejemplo, "Pendiente", "Completada", etc.).
 - `FechaCreacion`: La fecha en que se creó el registro, con un valor predeterminado de la fecha actual.
+  
 ![tabla Citas](api5.png)

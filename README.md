@@ -32,3 +32,70 @@ Además, se incluye la documentación para la integración con Swagger, y se han
 1. Clona este repositorio:
    ```bash
    git clone https://github.com/felosalgado/Curso-.Net.git
+Uso de Swagger
+Una vez que el proyecto esté corriendo, puedes acceder a la documentación de Swagger navegando a la siguiente URL en tu navegador:
+
+bash
+Copiar código
+https://localhost:{puerto}/swagger/index.html
+Swagger te permitirá probar los endpoints de la API directamente desde el navegador, además de ver la descripción de cada uno de los métodos disponibles.
+
+Endpoints Principales
+GET /api/citas
+Obtiene todas las citas registradas en la base de datos.
+
+GET /api/citas/{id}
+Obtiene una cita específica a partir de su ID.
+
+POST /api/citas
+Crea una nueva cita.
+
+PUT /api/citas/{id}
+Actualiza una cita existente.
+
+DELETE /api/citas/{id}
+Elimina una cita de la base de datos.
+
+Pruebas Unitarias
+El proyecto incluye pruebas unitarias usando el framework xUnit y Moq. Estas pruebas utilizan objetos simulados para evitar cualquier efecto sobre la base de datos en los entornos de pruebas.
+
+Ejecutar las pruebas
+Para ejecutar las pruebas, utiliza el siguiente comando:
+
+bash
+Copiar código
+dotnet test
+Ejemplos de Pruebas
+A continuación se muestra un ejemplo de cómo se prueba el método UpdateCita del controlador CitasController utilizando Moq para simular el servicio de citas:
+
+csharp
+Copiar código
+[Fact]
+public async Task UpdateCita_ReturnsNoContentResult_WhenSuccessful()
+{
+    // Arrange
+    var updatedCita = new Cita { CitaID = 1, Descripcion = "Cita actualizada" };
+    _mockCitaService.Setup(service => service.UpdateCita(updatedCita)).ReturnsAsync(updatedCita.CitaID);
+
+    // Act
+    var result = await _controller.UpdateCita(1, updatedCita);
+
+    // Assert
+    Assert.IsType<NoContentResult>(result);
+}
+Contribuir
+Si deseas contribuir a este proyecto, por favor sigue estos pasos:
+
+Haz un fork de este repositorio.
+Crea una nueva rama para tus cambios:
+bash
+Copiar código
+git checkout -b feature/nueva-funcionalidad
+Realiza los cambios y haz commits descriptivos.
+Envía tus cambios:
+bash
+Copiar código
+git push origin feature/nueva-funcionalidad
+Abre un pull request en este repositorio.
+Licencia
+Este proyecto está licenciado bajo la MIT License - ver el archivo LICENSE para más detalles.

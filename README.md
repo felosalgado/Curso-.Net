@@ -34,20 +34,22 @@ Además, se incluye la documentación para la integración con Swagger, y se han
    ```bash
    git clone https://github.com/felosalgado/Curso-.Net.git
    ```
-
 2. Navega al directorio del proyecto:
    ```bash
    cd Curso-.Net
    ```
-
 3. Restaura los paquetes NuGet:
    ```bash
    dotnet restore
    ```
-
 4. Configura tu cadena de conexión en el archivo `appsettings.json` para que apunte a tu base de datos.
 
-5. Ejecuta el proyecto:
+5. Ejecuta las migraciones de la base de datos:
+   ```bash
+   dotnet ef database update
+   ```
+
+6. Ejecuta el proyecto:
    ```bash
    dotnet run
    ```
@@ -56,7 +58,7 @@ Además, se incluye la documentación para la integración con Swagger, y se han
 
 Una vez que el proyecto esté corriendo, puedes acceder a la documentación de Swagger navegando a la siguiente URL en tu navegador:
 
-```
+```bash
 https://localhost:{puerto}/swagger/index.html
 ```
 
@@ -64,26 +66,36 @@ Swagger te permitirá probar los endpoints de la API directamente desde el naveg
 
 ## Endpoints Principales
 
-### GET /api/citas
+```bash
+GET /api/citas
+```
 Obtiene todas las citas registradas en la base de datos.
 
-### GET /api/citas/{id}
+```bash
+GET /api/citas/{id}
+```
 Obtiene una cita específica a partir de su ID.
 
-### POST /api/citas
+```bash
+POST /api/citas
+```
 Crea una nueva cita.
 
-### PUT /api/citas/{id}
+```bash
+PUT /api/citas/{id}
+```
 Actualiza una cita existente.
 
-### DELETE /api/citas/{id}
+```bash
+DELETE /api/citas/{id}
+```
 Elimina una cita de la base de datos.
 
 ## Pruebas Unitarias
 
 El proyecto incluye pruebas unitarias usando el framework xUnit y Moq. Estas pruebas utilizan objetos simulados para evitar cualquier efecto sobre la base de datos en los entornos de pruebas.
 
-### Ejecutar las pruebas
+-- Ejecutar las pruebas:
 
 Para ejecutar las pruebas, utiliza el siguiente comando:
 
@@ -91,7 +103,7 @@ Para ejecutar las pruebas, utiliza el siguiente comando:
 dotnet test
 ```
 
-## Ejemplos de Pruebas
+Ejemplos de Pruebas:
 
 A continuación se muestra un ejemplo de cómo se prueba el método `UpdateCita` del controlador `CitasController` utilizando Moq para simular el servicio de citas:
 
@@ -111,22 +123,26 @@ public async Task UpdateCita_ReturnsNoContentResult_WhenSuccessful()
 }
 ```
 
-## Contribuir
+## Script de creación de la tabla `Citas`
 
-Si deseas contribuir a este proyecto, sigue estos pasos:
+A continuación se incluye el script SQL para crear la tabla `Citas` en la base de datos:
 
-1. Haz un fork de este repositorio.
-2. Crea una nueva rama para tus cambios:
-   ```bash
-   git checkout -b feature/nueva-funcionalidad
-   ```
-3. Realiza los cambios y haz commits descriptivos.
-4. Envía tus cambios:
-   ```bash
-   git push origin feature/nueva-funcionalidad
-   ```
-5. Abre un pull request en este repositorio.
+```sql
+CREATE TABLE Citas (
+    CitaID INT PRIMARY KEY IDENTITY(1,1),
+    Descripcion NVARCHAR(255) NOT NULL,
+    FechaCita DATETIME NOT NULL,
+    ClienteID INT NOT NULL,
+    Estado NVARCHAR(50),
+    FechaCreacion DATETIME DEFAULT GETDATE()
+);
+```
 
-## Licencia
+Este script crea una tabla `Citas` con las siguientes columnas:
 
-Este proyecto está licenciado bajo la MIT License - ver el archivo [LICENSE](LICENSE) para más detalles.
+- `CitaID`: Un identificador único de la cita (clave primaria).
+- `Descripcion`: Una descripción de la cita.
+- `FechaCita`: La fecha y hora programada de la cita.
+- `ClienteID`: Identificador del cliente asociado con la cita.
+- `Estado`: El estado actual de la cita (por ejemplo, "Pendiente", "Completada", etc.).
+- `FechaCreacion`: La fecha en que se creó el registro, con un valor predeterminado de la fecha actual.

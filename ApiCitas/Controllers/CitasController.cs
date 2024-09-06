@@ -16,7 +16,12 @@ namespace ApiCitas.Controllers
         {
             _citaService = service;
         }
+        /// <summary>
+        /// Obtiene todas las citas
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
+
         public async Task<ActionResult<IEnumerable<Cita>>> GetAllCitas()
         {
             var citas = await _citaService.GetAllCitas();
@@ -26,6 +31,11 @@ namespace ApiCitas.Controllers
             return Ok(citas);
         }
 
+        /// <summary>
+        /// Obtiene una Cita por Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<ActionResult<Cita>> GetCitaById(int id)
         {
@@ -37,6 +47,11 @@ namespace ApiCitas.Controllers
             return Ok(cita);
         }
 
+        /// <summary>
+        /// Crea una Cita
+        /// </summary>
+        /// <param name="cita"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ActionResult> CreateCita(Cita cita)
         {
@@ -44,6 +59,12 @@ namespace ApiCitas.Controllers
             return CreatedAtAction(nameof(GetCitaById), new { id = cita.CitaID }, cita);
         }
 
+        /// <summary>
+        /// Modifica una Cita
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="cita"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public async Task<ActionResult> UpdateCita(int id, Cita cita)
         {
@@ -55,6 +76,11 @@ namespace ApiCitas.Controllers
             return NoContent();
         }
 
+        /// <summary>
+        /// Elimina Cita
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteCita(int id)
         {

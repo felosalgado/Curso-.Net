@@ -1,0 +1,41 @@
+﻿<!--GET/FoodService HTTP-->
+
+<FoodService>
+	<action>GetFoodServed</action>
+</FoodService>
+<!--HTTP 200 OK-->
+
+<FoodService>
+	<Chinese>
+		<element>fried rice</element>
+		<element>prawn crackers</element>
+	</Chinese>
+	<Indian>
+		<element>curry</element>
+		<element>poppadoms</element>
+	</Indian>
+	<Italian>
+		<element>pizza</element>
+		<element>calzone</element>
+	</Italian>
+</FoodService>
+<!-------------------------------------------------------------------------->
+<!--GET/FoodService HTTP-->
+
+<FoodService>
+	<action>MakeFoodOrder</action>
+	<order>
+		<element>pizza</element>
+		<element>fried rice</element>
+		<element>curry</element>
+	</order>
+</FoodService>
+<!--HTTP 200 OK-->
+
+<FoodService>
+	<order>
+		<element>pizza</element>
+		<element>fried rice</element>
+		<element>curry</element>
+	</order>
+</FoodService>

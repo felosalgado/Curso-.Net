@@ -21,45 +21,59 @@ namespace Ejercicios.Linq
                 Console.WriteLine(numero);
             }
         }
-
-
         public void QuerySintaxOrdenaLista()
         {
             string[] nombres = { "Ana", "Juan", "Pedro", "María" };
-
             var nombresOrdenados = from n in nombres
                                    orderby n.Length
                                    select n;
             Console.WriteLine("Nombres ordenados por longitud");
-
             foreach (var nombre in nombresOrdenados)
             {
                 Console.WriteLine($"el nombre es: {nombre}");
             }
-
         }
 
         public void QuerySintaxConsultaNombre()
         {
             List<Persona> personas = new List<Persona>
             {
-                new Persona { Nombre = "Ana", edad=23 },
-                new Persona {Nombre = "Juan", edad=30 },
-                new Persona { Nombre= "Pedro",edad=21 }
+                new Persona {Nombre ="Noah",edad=9},
+                new Persona{Nombre="Juan", edad=25},
+                new Persona{Nombre="Pedro", edad=30}
             };
 
-            var nombrePersona = from p in personas
-                                select p.Nombre;
+            var nombrePersona = from person in personas
+                                select person.Nombre;
 
-            Console.WriteLine("Nombres de personas (Query Syntax):");
-            foreach (var nombre in nombrePersona)
+            foreach (var persona in nombrePersona)
             {
-                Console.WriteLine(nombre);
+                Console.WriteLine($"los nombres son: {persona}");
             }
-
-
-
         }
 
+        public void QuerySintaxConsultaNombreParametro(string Criterio)
+        {
+            List<Persona> personas = new List<Persona>
+            {
+                new Persona {Nombre ="Noah",edad=9},
+                new Persona{Nombre="Juan", edad=25},
+                new Persona{Nombre="Pedro", edad=30}
+            };
+
+            var nombrePersona = from person in personas
+                                where person.Nombre == Criterio
+                                select new { person.Nombre };
+
+
+            if (nombrePersona.Any())
+            {
+                Console.WriteLine($"El nombre {Criterio} si existe ");
+            }
+            else
+            {
+                Console.WriteLine($"El nombre {Criterio} no existe ");
+            }
+        }
     }
 }

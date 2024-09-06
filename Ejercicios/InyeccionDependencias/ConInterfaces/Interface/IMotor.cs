@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ejercicios
+namespace Ejercicios.InyeccionDependencias.ConInterfaces.Interface
 {
-    public class Persona
+    public interface IMotor
     {
-        public string Nombre { get; set; }
-        public int edad {  get; set; }
+        void Start();
     }
 }

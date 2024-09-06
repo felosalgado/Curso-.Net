@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ejercicios
+namespace Ejercicios.VariasInyecciones.Interfaces
 {
-    public class Persona
+    public interface ILoggingService
     {
-        public string Nombre { get; set; }
-        public int edad {  get; set; }
+        void Log(string message);
     }
 }

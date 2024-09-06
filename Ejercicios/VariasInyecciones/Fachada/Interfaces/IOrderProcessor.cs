@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ejercicios
+namespace Ejercicios.VariasInyecciones.Fachada
 {
-    public class Persona
+    public interface IOrderProcessor
     {
-        public string Nombre { get; set; }
-        public int edad {  get; set; }
+        void Process(Order order);
     }
 }

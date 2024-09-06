@@ -15,6 +15,7 @@ namespace ApiCitas.Controllers
         {
             _userService = userService;
         }
+
         /// <summary>
         /// Obtiene todos los usuarios
         /// </summary>
@@ -23,12 +24,13 @@ namespace ApiCitas.Controllers
         public async Task<ActionResult<IEnumerable<User>>> GetAllUsers()
         {
             var users = await _userService.GetAllUsers();
-            //IQueryable<User> usersAsQueryable = users.AsQueryable();
-            //IQueryable<User> filter = usersAsQueryable.Where(e => e.UserName.Equals("Cristian"));
-
             return Ok(users);
         }
 
+        /// <summary>
+        /// Obtiene solo un usuario
+        /// </summary>
+        /// <returns>un usuario</returns>
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUserById(int id)
         {
@@ -40,6 +42,10 @@ namespace ApiCitas.Controllers
             return Ok(user);
         }
 
+        /// <summary>
+        /// Crea un Usuario
+        /// </summary>
+        /// <returns>un usuario</returns>
         [HttpPost]
         public async Task<ActionResult> CreateUser(User user)
         {
@@ -47,6 +53,10 @@ namespace ApiCitas.Controllers
             return CreatedAtAction(nameof(GetUserById), new { id = user.IdUser }, user);
         }
 
+        /// <summary>
+        /// Actualiza un Usuario
+        /// </summary>
+        /// <returns>sin contenido</returns>
         [HttpPut("{id}")]
         public async Task<ActionResult> UpdateUser(int id, User user)
         {
@@ -58,6 +68,10 @@ namespace ApiCitas.Controllers
             return NoContent();
         }
 
+        /// <summary>
+        /// Borra un usuario
+        /// </summary>
+        /// <returns>sin contenido</returns>
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteUser(int id)
         {

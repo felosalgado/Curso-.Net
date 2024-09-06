@@ -12,6 +12,8 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<IDbContext, DbContext>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ICitaService, CitaService>();
+builder.Services.AddScoped<ICitaRepository, CitaRepository>();
 
 builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                      .AddEnvironmentVariables();

@@ -74,7 +74,7 @@ Swagger te permitirá probar los endpoints de la API directamente desde el naveg
 GET /api/citas
 ```
 Obtiene todas las citas registradas en la base de datos.
-![GET /api/citas](assets/api2.png)
+![GET /api/citas](api2.png)
 
 
 ```bash
@@ -86,7 +86,7 @@ Obtiene una cita específica a partir de su ID.
 POST /api/citas
 ```
 Crea una nueva cita.
-![POST /api/citas](assets/api3.png)
+![POST /api/citas](api3.png)
 
 ```bash
 PUT /api/citas/{id}

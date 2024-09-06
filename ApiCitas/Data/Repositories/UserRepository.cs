@@ -27,7 +27,7 @@ namespace ApiCitas.Data.Repositories
         {
             using (var connection = _context.CreateConnection())
             {
-                var query = "SELECT * FROM Users WHERE Id = @Id";
+                var query = "SELECT * FROM Users WHERE IdUser = @Id";
                 return await connection.QuerySingleOrDefaultAsync<User>(query, new { Id = id });
             }
         }
@@ -36,7 +36,7 @@ namespace ApiCitas.Data.Repositories
         {
             using (var connection = _context.CreateConnection())
             {
-                var query = "INSERT INTO Users (UserName, UserEmail, UserDateBirth) VALUES (@UserName, @UserEmail, @UserDateBirth); SELECT CAST(SCOPE_IDENTITY() as int)";
+                var query = "INSERT INTO Users (UserName, UserLastName, UserPhone, UserEmail, UserDateBirth) VALUES (@UserName, @UserLastName, @UserPhone, @UserEmail, @UserDateBirth); SELECT CAST(SCOPE_IDENTITY() as int)";
                 return await connection.QuerySingleAsync<int>(query, user);
             }
         }
@@ -45,7 +45,7 @@ namespace ApiCitas.Data.Repositories
         {
             using (var connection = _context.CreateConnection())
             {
-                var query = "UPDATE Users SET UserName = @UserName, UserEmail = @UserEmail, UserDateBirth = @UserDateBirth WHERE IdUser = @IdUser";
+                var query = "UPDATE Users SET UserName = @UserName,UserLastName = @UserLastName, UserPhone = @UserPhone, UserEmail = @UserEmail, UserDateBirth = @UserDateBirth WHERE IdUser = @IdUser";
                 return await connection.ExecuteAsync(query, user);
             }
         }
@@ -54,7 +54,7 @@ namespace ApiCitas.Data.Repositories
         {
             using (var connection = _context.CreateConnection())
             {
-                var query = "DELETE FROM Users WHERE Id = @Id";
+                var query = "DELETE FROM Users WHERE IdUser = @Id";
                 return await connection.ExecuteAsync(query, new { Id = id });
             }
         }

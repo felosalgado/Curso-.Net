@@ -9,8 +9,5 @@
         public string UserEmail { get; set; }
         public string UserDateBirth { get; set; }
         //public string User { get; set; }
-
-
-
     }
 }

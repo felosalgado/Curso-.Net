@@ -27,8 +27,8 @@ namespace ApiCitas.Data.Repositories
         {
             using (var connection = _context.CreateConnection())
             {
-                var query = "SELECT * FROM Users WHERE Id = @Id";
-                return await connection.QuerySingleOrDefaultAsync<User>(query, new { Id = id });
+                var query = "SELECT * FROM Users WHERE IdUser = @IdUser";
+                return await connection.QuerySingleOrDefaultAsync<User>(query, new { IdUser = id });
             }
         }
 
@@ -54,8 +54,8 @@ namespace ApiCitas.Data.Repositories
         {
             using (var connection = _context.CreateConnection())
             {
-                var query = "DELETE FROM Users WHERE Id = @Id";
-                return await connection.ExecuteAsync(query, new { Id = id });
+                var query = "DELETE FROM Users WHERE IdUser = @IdUser";
+                return await connection.ExecuteAsync(query, new { IdUser = id });
             }
         }
 

@@ -9,5 +9,7 @@ namespace ApiCitas.Data.Repositories
         Task<int> Update(User cita);
         Task<int> Delete(int id);
         Task<IEnumerable<Cita>> GetAll();
+        Task<int> Create(Cita cita);
+        Task<int> Update(Cita cita);
     }
 }

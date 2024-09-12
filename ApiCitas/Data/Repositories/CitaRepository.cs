@@ -10,21 +10,26 @@ namespace ApiCitas.Data.Repositories
         {
             _context = context;
         }
-        public Task<int> Create(User cita)
+        public async Task<int> Create(Cita cita)
         {
             using (var connection = _context.CreateConnection())
             {
-                var query = "INSERT INTO Citas (CitasID, FechaCita, Descripcion, Lugar, Estado, FechaCreacion, FechaModificacion) VALUES (@UsuarioID, @FechaCita, @Descripcion, @Lugar, @Estado, @FechaCreacion, @FechaModificacion); SELECT CAST(SCOPE_IDENTITY() as int)";
+                var query = "INSERT INTO Citas (UsuarioID, FechaCita, Descripcion, Lugar, Estado, FechaCreacion, FechaModificacion) VALUES (@UsuarioID, @FechaCita, @Descripcion, @Lugar, @Estado, @FechaCreacion, @FechaModificacion); SELECT CAST(SCOPE_IDENTITY() as int)";
                 return await connection.QuerySingleAsync<int>(query, cita);
             }
         }
 
-        public Task<int> Delete(int id)
+        public Task<int> Create(User cita)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<int> Delete(int id)
         {
             using (var connection = _context.CreateConnection())
             {
-                var query = "DELETE FROM Citas WHERE CitasID = @Id";
-                return await connection.ExecuteAsync<int>(query, new { Id = id });   
+                var query = "DELETE FROM Citas WHERE CitaID = @Id";
+                return await connection.ExecuteAsync(query, new { Id = id });
             }
         }
 
@@ -41,18 +46,23 @@ namespace ApiCitas.Data.Repositories
         {
             using (var connection = _context.CreateConnection())
             {
-                var query = "SELECT * FROM Citas WHERE CitasID =@Id";
-                return await connection.QueryAsync<Cita>(query, new { Id = id });
+                var query = "SELECT * FROM Citas WHERE CitasID = @Id";
+                return await connection.QuerySingleOrDefaultAsync<Cita>(query, new { Id = id });
             }
         }
 
-        public async Task<int> Update(User cita)
+        public async Task<int> Update(Cita cita)
         {
             using (var connection = _context.CreateConnection())
             {
                 var query = "UPDATE Citas SET UsuarioID = @UsuarioID, FechaCita = @FechaCita, Descripcion = @Descripcion, Lugar = @Lugar, Estado = @Estado, FechaCreacion = @FechaCreacion, FechaModificacion = @FechaModificacion   WHERE CitaID = @CitaID";
                 return await connection.ExecuteAsync(query, cita);
             }
+        }
+
+        public Task<int> Update(User cita)
+        {
+            throw new NotImplementedException();
         }
     }
 }

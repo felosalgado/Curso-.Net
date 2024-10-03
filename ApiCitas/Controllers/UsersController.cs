@@ -1,5 +1,6 @@
 ﻿using ApiCitas.Models;
 using ApiCitas.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

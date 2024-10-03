@@ -1,0 +1,54 @@
+# Nombre del pipeline
+name: Build and Test Pipeline
+
+# Gatillo para ejecutar el pipeline al hacer push a la rama main
+trigger:
+  - master
+
+# Pool de agentes de build a utilizar
+pool:
+  vmImage: 'ubuntu-latest'
+
+# Definición de las etapas del pipeline
+stages:
+  - stage: Restore
+    displayName: Restore Dependencies
+    jobs:
+      - job: Restore
+        displayName: Restore
+        steps:
+          - task: UseDotNet@2
+            inputs:
+              packageType: 'sdk'
+              version: '7.0'  # Asegúrate de usar la versión correcta de .NET 7.x aquí
+
+          - script: dotnet restore
+            displayName: Restore NuGet packages
+
+  - stage: Build
+    displayName: Build Solution
+    jobs:
+      - job: Build
+        displayName: Build
+        steps:
+          - task: UseDotNet@2
+            inputs:
+              packageType: 'sdk'
+              version: '7.0'
+
+          - script: dotnet build --configuration Release
+            displayName: Build solution
+
+  - stage: Test
+    displayName: Run Tests
+    jobs:
+      - job: Test
+        displayName: Test
+        steps:
+          - task: UseDotNet@2
+            inputs:
+              packageType: 'sdk'
+              version: '7.0'
+
+          - script: dotnet test --configuration Release --no-build --verbosity normal
+            displayName: Run tests
